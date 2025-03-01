@@ -41,7 +41,7 @@ const about = () => {
 
         </div>
       </nav>
-          <h1>ABOUT</h1>
+          <div>ABOUT</div>
         </div>
       </div>
     </>
