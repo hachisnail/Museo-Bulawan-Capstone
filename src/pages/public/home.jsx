@@ -74,21 +74,23 @@ const home = () => {
 
           <div className="w-16 h-100 flex flex-col items-center gap-y-56 justify-center mt-56">
           <div className='lg:h-60 2xl:h-100 w-full flex flex-col justify-between items-center text-white'>
-            <a href="https://www.tiktok.com/@museobulawan" target="_blank" rel="noopener noreferrer" className='-rotate-90'>
+            <a href="https://www.tiktok.com/@museobulawan" target="_blank" rel="noopener noreferrer" className='rotate-90'>
               <div className=" w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
-                <i className="fa-solid fa-circle text-sm mr-2"></i>
-                <i class="fa-brands fa-tiktok mr-2"></i>
-                <span>museobulawan</span>
+              <span>museobulawan</span>
+                <i className="fa-solid fa-circle text-sm ml-2"></i>
+                <i class="fa-brands fa-tiktok ml-2"></i>
+                
               </div>
             </a>
 
               
 
-            <a href="https://www.youtube.com/@museobulawanofficial" target="_blank" rel="noopener noreferrer" className='-rotate-90'>
+            <a href="https://www.youtube.com/@museobulawanofficial" target="_blank" rel="noopener noreferrer" className='rotate-90'>
               <div className=" w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
-                <i className="fa-solid fa-circle text-sm mr-2"></i>
-                <i class="fa-brands fa-youtube mr-2"></i>
-                <span>Museo Bulawan (Abel C. Icatlo)</span>
+              <span>Museo Bulawan (Abel C. Icatlo)</span>
+                <i className="fa-solid fa-circle text-sm ml-2"></i>
+                <i class="fa-brands fa-youtube ml-2"></i>
+               
               </div>
             </a>
           </div>
@@ -96,8 +98,8 @@ const home = () => {
         </div>
           
       </div>
-      <div className='w-auto z mx-auto pt-36 min-h-screen bg-cover bg-center bg-no-repeat'
-       style={{ backgroundImage: "url('./assets/06-AfternoonMealOfTheWorker 1.png')" }}>
+      <div className='w-auto z mx-auto pt-36 min-h-screen bg-white'
+       >
 
       </div>
     </>
