@@ -41,21 +41,21 @@ const home = () => {
         </div>
       </nav>
       <div className='mx-5 w-auto flex h-full'>
-      <div className="w-16 h-full flex flex-col items-center gap-y-56 justify-center py-96">
-      <div className='h-full w-full flex flex-col justify-between items-center text-white'>
-      <a href="https://www.facebook.com/museobulawancn" target="_blank" rel="noopener noreferrer">
-      <div className="-rotate-90 w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
-        <i className="fa-solid fa-circle text-sm mr-2"></i>
-        <i className="fa-brands fa-square-facebook mr-2"></i> 
-        <span>Museo Bulawan</span>
-      </div>
-    </a>
+      <div className="w-16 h-100 flex flex-col items-center justify-between mt-56">
+        <div className='h-full w-full flex flex-col justify-between items-center text-white'>
+        <a href="https://www.facebook.com/museobulawancn" target="_blank" rel="noopener noreferrer">
+        <div className="-rotate-90 w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
+          <i className="fa-solid fa-circle text-sm mr-2"></i>
+          <i className="fa-brands fa-square-facebook mr-2"></i> 
+          <span>Museo Bulawan</span>
+        </div>
+      </a>
 
-    <div className="-rotate-90 w-auto h-auto">
-      <span>museobulawanofficial</span>
+        <div className="-rotate-90 w-auto h-auto">
+          <span>museobulawanofficial</span>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
 
 
