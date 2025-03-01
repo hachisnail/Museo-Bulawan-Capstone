@@ -8,7 +8,7 @@ const home = () => {
 
   return (
     <>
-      <div className="w-auto z mx-auto pt-7 min-h-screen bg-cover bg-center bg-no-repeat "
+      <div className="w-auto mx-auto pt-7 min-h-screen bg-cover bg-center bg-no-repeat "
       style={{ backgroundImage: "url('./assets/06-AfternoonMealOfTheWorker 1.png')" }}>
       <nav className=" w-[100vw] bg-transparent">
         <div className='flex mx-20 h-28 bg-transparent  border-b-2 border-white justify-between'>
@@ -41,35 +41,58 @@ const home = () => {
         </div>
       </nav>
       <div className='mx-5 w-auto flex h-full'>
-      <div className="w-16 h-100 flex flex-col items-center gap-y-56 justify-center mt-56">
-      <div className='lg:h-60 2xl:h-100 w-full flex flex-col justify-between items-center text-white'>
-      <a href="https://www.facebook.com/museobulawancn" target="_blank" rel="noopener noreferrer">
-      <div className="-rotate-90 w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
-        <i className="fa-solid fa-circle text-sm mr-2"></i>
-        <i className="fa-brands fa-square-facebook mr-2"></i> 
-        <span>Museo Bulawan</span>
-      </div>
-    </a>
-
-    <div className="-rotate-90 w-auto h-auto">
-      <span>museobulawanofficial</span>
-    </div>
-  </div>
-</div>
+        <div className="w-16 h-100 flex flex-col items-center gap-y-56 justify-center mt-56">
+          <div className='lg:h-60 2xl:h-100 w-full flex flex-col justify-between items-center text-white'>
+            <a href="https://www.facebook.com/museobulawancn" target="_blank" rel="noopener noreferrer" className='-rotate-90'>
+              <div className=" w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
+                <i className="fa-solid fa-circle text-sm mr-2"></i>
+                <i className="fa-brands fa-square-facebook mr-2"></i> 
+                <span>Museo Bulawan</span>
+              </div>
+            </a>
+            
+            <a href="https://www.instagram.com/museobulawanofficial/" target="_blank" rel="noopener noreferrer" className='-rotate-90'>
+              <div className=" w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
+                <i className="fa-solid fa-circle text-sm mr-2"></i>
+                <i class="fa-brands fa-instagram mr-2"></i> 
+                <span>museobulawanofficial</span>
+              </div>
+            </a>
+          </div>
+        </div>
 
 
 
 
         
           <div className="w-full h-fit ">
-        <span className="text-5xl font-bold text-[#DAB765] leading-[200%] drop-shadow-[3px_3px_0px_black] ">
-          WELCOME TO
-          </span>
+          <span className="text-5xl font-bold text-[#DAB765] leading-[200%] drop-shadow-[3px_3px_0px_black] ">
+            WELCOME TO
+            </span>
 
-        </div>
-        <div className='w-16 h-auto'>
-s
           </div>
+
+          <div className="w-16 h-100 flex flex-col items-center gap-y-56 justify-center mt-56">
+          <div className='lg:h-60 2xl:h-100 w-full flex flex-col justify-between items-center text-white'>
+            <a href="https://www.tiktok.com/@museobulawan" target="_blank" rel="noopener noreferrer" className='-rotate-90'>
+              <div className=" w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
+                <i className="fa-solid fa-circle text-sm mr-2"></i>
+                <i class="fa-brands fa-tiktok mr-2"></i>
+                <span>museobulawan</span>
+              </div>
+            </a>
+
+              
+
+            <a href="https://www.youtube.com/@museobulawanofficial" target="_blank" rel="noopener noreferrer" className='-rotate-90'>
+              <div className=" w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
+                <i className="fa-solid fa-circle text-sm mr-2"></i>
+                <i class="fa-brands fa-youtube mr-2"></i>
+                <span>Museo Bulawan (Abel C. Icatlo)</span>
+              </div>
+            </a>
+          </div>
+        </div>
         </div>
           
       </div>
