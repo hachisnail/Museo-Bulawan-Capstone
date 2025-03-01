@@ -48,7 +48,7 @@ const home = () => {
             <div className="-rotate-90 w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
               <i class="fa-solid fa-circle text-sm mr-2" ></i>
               <i className="fa-brands fa-square-facebook mr-2"></i> 
-              <span>Museo Bulawan</span>
+              <span>Museos Bulawan</span>
             </div>
           </a>
           <div className="-rotate-90 w-auto h-auto">
