@@ -98,8 +98,8 @@ const home = () => {
         </div>
           
       </div>
-      <div className='w-auto z mx-auto pt-36 min-h-screen bg-white'
-       >
+      <div className="w-auto z mx-auto pt-7 min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
+      style={{ backgroundImage: "url('./assets/bghome2.png')" }}>
 
       </div>
     </>
