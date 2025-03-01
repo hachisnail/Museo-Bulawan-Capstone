@@ -41,17 +41,19 @@ const home = () => {
         </div>
       </nav>
       <div className='mx-5 w-auto flex '>
-      <div className="w-16 h-auto flex flex-col items-center gap-y-56 mt-56">
-      <div className="-rotate-90 w-auto h-auto whitespace-nowrap flex items-center text-xl">
-      <i className="fa-brands fa-square-facebook mr-2"></i>
-      
-        <span>Museo Bulawan</span>
-      </div>
+      <div className="w-16 h-full flex flex-col items-center gap-y-56 mt-56">
 
-
-
-        <div className="-rotate-90 w-auto h-auto">
-          <span>museobulawanofficial</span>
+        <div className='h-100 w-full flex flex-col justify-between items-center text-white'>
+          <a href="https://www.facebook.com/museobulawancn" target="_blank" rel="noopener noreferrer" >
+            <div className="-rotate-90 w-auto h-auto whitespace-nowrap flex items-center text-xl font-medium">
+              <i class="fa-solid fa-circle text-sm mr-2" ></i>
+              <i className="fa-brands fa-square-facebook mr-2"></i> 
+              <span>Museo Bulawan</span>
+            </div>
+          </a>
+          <div className="-rotate-90 w-auto h-auto">
+            <span>museobulawanofficial</span>
+          </div>
         </div>
       </div>
 
