@@ -146,8 +146,7 @@ const home = () => {
       </div>
 
 
-      <div className="w-auto max-h-full mx-auto pt-7 min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden" 
-            style={{ backgroundImage: "url('./assets/displayhome3.png')" }}>
+      <div className="w-auto max-h-full mx-auto pt-7 min-h-screen bg-white overflow-hidden" >
 
       </div>
 

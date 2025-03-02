@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate  } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useState } from 'react';
-
+import AdminNavbar from '../../components/navbar/adminNavbar';
 
 
 const articles = () => {
@@ -14,8 +14,22 @@ const articles = () => {
 
   return (
     <>   
-     <div className='w-screen h-screen bg-white pt-24'>
-     <span> articles </span>
+     <div className='w-full h-screen bg-white pt-24 flex'>
+      <div className='bg-[#1C1B19] w-1/6 h-full py-20 px-10'>
+        
+        <AdminNavbar />
+        
+      </div>
+
+
+      <div className='w-5/6 h-full flex justify-center p-4'>
+        
+      <div className='w-full h-full'>
+          <span className='text-4xl'>ARTICLE CONTENT HERE <br /></span>
+          <span className='text-2xl'>Details</span>
+        </div>
+
+      </div>
     </div>
     </>
 
