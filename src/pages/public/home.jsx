@@ -66,7 +66,7 @@ const home = () => {
 
               <div className='w-auto h-auto flex flex-col justify-center items-start mt-13 gap-3'>
                 <div className="w-auto h-auto text-white flex items-start gap-2">
-                  <i className="fas fa-clock text-xl relative mt-1.5 mr-2"></i>
+                  <i className="fas fa-clock text-xl relative mt-1.5 mr-2 w-5"></i>
                   <div>
                     <span className="block text-xl font-bold">Museum Hours</span>
                     <span className="text-md font-normal leading-tight">Open Daily 9:00am-5:00pm, Monday-Friday,</span>
@@ -74,7 +74,7 @@ const home = () => {
                 </div>
 
                 <div className="w-auto h-auto text-white flex items-start gap-2">
-                  <i className="fa-solid fa-location-dot text-xl relative mt-1 mr-2"></i>
+                  <i className="fa-solid fa-location-dot text-xl relative mt-1 mr-2 w-5"></i>
                   <div>
                     <span className="block text-xl font-bold">Museum Location</span>
                     <span className="text-md font-normal leading-tight">Camarines Norte Provincial Capitol Grounds, Daet Philippines</span>
@@ -133,7 +133,7 @@ const home = () => {
 
               <div className='w-auto mt-12 flex items-center'>
                 <span className='text-xl font-semibold'>Learn More </span>
-                  <img src="/assets/arrow-right.png" alt="arrow" className="ml-2 w-8" /> {/* Adjust the width of the image */}
+                  <img src="/assets/arrow-right.png" alt="arrow" className="ml-2 w-8" />
                 </div>
               </div>
 
