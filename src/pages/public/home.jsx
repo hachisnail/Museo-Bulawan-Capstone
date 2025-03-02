@@ -89,7 +89,7 @@ const home = () => {
                 </button>
               </div>
 
-              <div className='w-auto h-auto flex flex-col justify-center items-start mt-12 gap-3'>
+              <div className='w-auto h-auto flex flex-col justify-center items-start mt-13 gap-3'>
                 <div className="w-auto h-auto text-white flex items-start gap-2">
                   <i className="fas fa-clock text-xl relative mt-1.5 mr-2"></i>
                   <div>
