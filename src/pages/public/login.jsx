@@ -62,7 +62,7 @@ const Login = () => {
       
       <LandingNavbar />
       
-      <div className="flex items-center justify-center min-h-[70vh]">
+      <div className="flex items-center mt-20 backdrop-blur-xs justify-center min-h-[70vh]">
         <div className="border-2 border-white bg-opacity-50 p-8 rounded-2xl w-full max-w-md mx-4">
           <h2 className="text-4xl font-bold text-center mb-8 text-white">
             Admin Login
