@@ -14,7 +14,7 @@ const donations = () => {
   return (
     <>   
      <div className='w-screen h-screen bg-white pt-24'>
-
+        <span> donations </span>
     </div>
     </>
 

@@ -6,7 +6,7 @@ import Home from '../pages/public/home';
 import About from '../pages/public/about';
 import Login from '../pages/public/login';
 import NewsAndEvents from '../pages/public/newsandevents';
-import AdminRoutes from './AdminRoutes';
+import AdminRoutes from './adminRoutes';
 
 const router = createBrowserRouter([
   {
@@ -16,19 +16,20 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
       { path: 'news&events', element: <NewsAndEvents /> },
-      { path: 'login', element: <Login /> }
-    ]
+      { path: 'login', element: <Login /> },
+    ],
   },
   {
     path: '/admin',
-    element: <ProtectedRoute />, 
+    element: <ProtectedRoute />,
     children: [
       {
+        path: '',
         element: <AdminLayout />,
-        children: AdminRoutes
-      }
-    ]
-  }
+        children: AdminRoutes,
+      },
+    ],
+  },
 ]);
 
 export default router;

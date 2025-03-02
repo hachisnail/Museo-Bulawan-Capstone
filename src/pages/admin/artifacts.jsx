@@ -15,7 +15,7 @@ const artifacts = () => {
   return (
     <>   
      <div className='w-screen h-screen bg-white pt-24'>
-
+     <span> artifacts </span>
 
     </div>
     </>
