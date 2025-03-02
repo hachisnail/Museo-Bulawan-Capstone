@@ -5,7 +5,7 @@ import { useAuth } from '../../context/AuthContext';
 const LandingHeader = () => {
   const { isAuthenticated } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const isSpecialRoute = location.pathname === '/news&events' || location.pathname === '/about';
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     setIsScrolled(currentScrollY > 50);

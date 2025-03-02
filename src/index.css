@@ -15,7 +15,7 @@ body {
 /* animation for header */
 @keyframes slideInRight {
   0% {
-    transform: translateX(25%);
+    transform: translateX(15%);
   }
 
   100% {
