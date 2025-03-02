@@ -15,7 +15,7 @@ const appointments = () => {
   return (
     <>   
      <div className='w-screen h-screen bg-white pt-24'>
-     
+     <span> appointmets </span>
    
     </div>
     </>

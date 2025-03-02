@@ -15,7 +15,7 @@ const articles = () => {
   return (
     <>   
      <div className='w-screen h-screen bg-white pt-24'>
-
+     <span> articles </span>
     </div>
     </>
 

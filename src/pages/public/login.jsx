@@ -1,7 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import LandingNavbar from '../../components/navbar/landingNavbar';
+import Cookies from 'js-cookie';
+
+const mockApiCall = (email, password) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (email === 'admin@example.com' && password === 'admin123') {
+        resolve({ token: 'mock-secure-token' });
+      } else {
+        reject(new Error('Invalid credentials'));
+      }
+    }, 1000);
+  });
+};
 
 const Login = () => {
   const { login } = useAuth();
@@ -11,6 +24,14 @@ const Login = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const storedToken = Cookies.get('authToken');
+    if (storedToken) {
+      login();
+      navigate('/admin/dashboard');
+    }
+  }, [login, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,18 +45,12 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Replace with actual authentication logic
-      if (email === 'admin@example.com' && password === 'admin123') {
-        login();
-        navigate('/admin/dashboard');
-      } else {
-        setError('Invalid credentials');
-      }
+      const response = await mockApiCall(email, password);
+      login();
+      Cookies.set('authToken', response.token, { expires: 7 }); // Store token for 7 days
+      navigate('/admin/dashboard');
     } catch (err) {
-      setError('Login failed. Please try again.');
+      setError(err.message);
     } finally {
       setIsLoading(false);
     }
@@ -47,7 +62,6 @@ const Login = () => {
       
       <LandingNavbar />
       
-
       <div className="flex items-center justify-center min-h-[70vh]">
         <div className="border-2 border-white bg-opacity-50 p-8 rounded-2xl w-full max-w-md mx-4">
           <h2 className="text-4xl font-bold text-center mb-8 text-white">
