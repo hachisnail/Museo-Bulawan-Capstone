@@ -1,4 +1,3 @@
-// routes/MainRoutes.jsx
 import { createBrowserRouter } from 'react-router-dom';
 import LandingLayout from '../layouts/LandingLayout';
 import AdminLayout from '../layouts/AdminLayout';
@@ -11,21 +10,22 @@ import AdminRoutes from './AdminRoutes';
 
 const router = createBrowserRouter([
   {
+    path: '/',
     element: <LandingLayout />,
     children: [
-      { path: '/', element: <Home /> },
-      { path: '/about', element: <About /> },
-      { path: '/news&events', element: <NewsAndEvents /> },
-      { path: '/login', element: <Login /> },
+      { index: true, element: <Home /> },
+      { path: 'about', element: <About /> },
+      { path: 'news&events', element: <NewsAndEvents /> },
+      { path: 'login', element: <Login /> }
+    ]
+  },
+  {
+    path: '/admin',
+    element: <ProtectedRoute />, 
+    children: [
       {
-        path: '/admin',
-        element: <ProtectedRoute />,
-        children: [
-          {
-            element: <AdminLayout />,
-            children: AdminRoutes
-          }
-        ]
+        element: <AdminLayout />,
+        children: AdminRoutes
       }
     ]
   }

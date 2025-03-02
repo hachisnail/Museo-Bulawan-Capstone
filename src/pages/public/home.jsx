@@ -10,36 +10,37 @@ const home = () => {
     <>
       <div className="w-auto mx-auto pt-7 min-h-screen bg-cover bg-center bg-no-repeat "
       style={{ backgroundImage: "url('./assets/06-AfternoonMealOfTheWorker 1.png')" }}>
-      <nav className=" w-[100vw] bg-transparent">
-        <div className='flex mx-20 h-28 bg-transparent  border-b-2 border-white justify-between'>
-          <div className='flex'> 
+        <nav className=" w-[100vw] bg-transparent">
+          <div className='flex mx-20 h-28 bg-transparent  border-b-2 border-white justify-between'>
+            <div className='flex'> 
 
-            <img src="./assets/LOGO.png" alt="" className='max-h-20 my-auto'/>
+              <img src="./assets/LOGO.png" alt="" className='max-h-20 my-auto'/>
 
-            <div className='h-20 w-1 my-auto rounded-2xl bg-white ml-5'>
+              <div className='h-20 w-1 my-auto rounded-2xl bg-white ml-5'>
+              </div>
+
+              <Link to="/" className='my-auto leading-none text-4xl font-bold ml-2 text-white'> 
+                  <span>Museo <br />Bulawan</span>
+              </Link>
             </div>
 
-            <Link to="/" className='my-auto leading-none text-4xl font-bold ml-2 text-white'> 
-                <span>Museo <br />Bulawan</span>
-            </Link>
+            <div className='my-auto text-2xl font-semibold shadow-black w-auto text-white'>
+              <NavLink to="/" className='mx-2'>
+                Home
+              </NavLink>
+              
+              <NavLink to="/news&events" className='mx-2'>
+                News & Events
+              </NavLink>
+
+              <NavLink to="/about" className='mx-2'>
+                About
+              </NavLink>
+            </div>
+
           </div>
-
-          <div className='my-auto text-2xl font-semibold shadow-black w-auto text-white'>
-            <NavLink to="/" className='mx-2'>
-              Home
-            </NavLink>
-            
-            <NavLink to="/news&events" className='mx-2'>
-              News & Events
-            </NavLink>
-
-            <NavLink to="/about" className='mx-2'>
-              About
-            </NavLink>
-          </div>
-
-        </div>
-      </nav>
+        </nav>
+        
       <div className='mx-5 w-auto flex h-full '>
         <div className="w-16 h-100 flex flex-col items-center gap-y-56 justify-center mt-56">
           <div className='lg:h-60 2xl:h-100 w-full flex flex-col justify-between items-center text-white'>
@@ -137,25 +138,27 @@ const home = () => {
         </div>
           
       </div>
+
+
       <div className="w-auto max-h-full mx-auto pt-7 min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden" 
-          style={{ backgroundImage: "url('./assets/bghome2.png')" }}>
-          <div className="w-auto h-150 mt-35 ml-35 mr-0 flex flex-col items-start">
+            style={{ backgroundImage: "url('./assets/bghome2.png')" }}>
+        <div className="w-auto h-150 mt-35 ml-35 mr-0 flex flex-col items-start">
 
-            <div className="w-auto h-auto flex items-center">
-              <h1 className="w-7 h-0.5 bg-[#636363] mr-2"></h1>
-              <span className="text-[#636363]">About Museo Bulawan</span>
-            </div>
+          <div className="w-auto h-auto flex items-center">
+            <h1 className="w-7 h-0.5 bg-[#636363] mr-2"></h1>
+            <span className="text-[#636363]">About Museo Bulawan</span>
+          </div>
 
-            <div className="w-full h-full flex justify-between items-start mt-8 gap-12">
-              <div className="w-1/2 h-auto pt-6">
-                <span className="text-4xl leading-snug tracking-wide font-[HinaMincho]">
-                  <span className="text-5xl font-medium">
-                    Museo Bulawan
-                  </span>, known as the “Golden Museum,” is the leading and the most viewer-friendly community museum that serves as the nerve center for education and communication of the rich cultural, artistic and natural heritage and history of Camarines Norte. It is the ultimate medium for preservation and exhibition of significant objects that strengthen the values of the people and deepen their patriotism and sense of identity.
-                </span>
+          <div className="w-full h-full flex justify-between items-start mt-8 gap-12">
+            <div className="w-1/2 h-auto pt-6">
+              <span className="text-4xl leading-snug tracking-wide font-[HinaMincho]">
+                <span className="text-5xl font-medium">
+                  Museo Bulawan
+                </span>, known as the “Golden Museum,” is the leading and the most viewer-friendly community museum that serves as the nerve center for education and communication of the rich cultural, artistic and natural heritage and history of Camarines Norte. It is the ultimate medium for preservation and exhibition of significant objects that strengthen the values of the people and deepen their patriotism and sense of identity.
+              </span>
 
-                <div className='w-auto mt-12 flex items-center'>
-                  <span className='text-xl font-semibold'>Learn More </span>
+              <div className='w-auto mt-12 flex items-center'>
+                <span className='text-xl font-semibold'>Learn More </span>
                   <img src="/assets/arrow-right.png" alt="arrow" className="ml-2 w-8" /> {/* Adjust the width of the image */}
                 </div>
               </div>
@@ -165,10 +168,13 @@ const home = () => {
               </div>
 
             </div>
-
-           
-
           </div>
+      </div>
+
+
+      <div className="w-auto max-h-full mx-auto pt-7 min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden" 
+            style={{ backgroundImage: "url('./assets/displayhome3.png')" }}>
+
       </div>
 
 

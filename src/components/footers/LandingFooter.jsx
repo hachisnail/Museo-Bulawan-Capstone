@@ -7,9 +7,11 @@ const LandingFooter = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div>
+    <>
+    <div className='w-screen h-50 bg-amber-300'>
 
     </div>
+    </>
   );
 };
 

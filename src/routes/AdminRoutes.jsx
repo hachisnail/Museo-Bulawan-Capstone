@@ -1,4 +1,4 @@
-// routes/AdminRoutes.jsx
+
 import Dashboard from '../pages/admin/dashboard';
 
 const AdminRoutes = [
