@@ -2,10 +2,27 @@
 
 /* Hide scrollbar but keep scrolling */
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  /* For IE & Edge */
+  scrollbar-width: none;
+  /* For Firefox */
+}
+
+/* animation for header */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(25%);
   }
-  
-  body {
-    -ms-overflow-style: none; /* For IE & Edge */
-    scrollbar-width: none; /* For Firefox */
+
+  100% {
+    transform: translateX(0%);
   }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease forwards;
+}

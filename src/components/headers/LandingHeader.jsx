@@ -19,7 +19,8 @@ const LandingHeader = () => {
 
   return (
     <header
-      className={`w-full fixed z-50 transition-all duration-300 ${isScrolled ? 'bg-[#1C1B19] shadow-lg' : 'bg-transparent shadow-none'}`}
+      className={`w-full fixed z-50 transition-all duration-300 ${isScrolled ? 'bg-[#1C1B19] shadow-lg' : 'bg-transparent shadow-none'
+        }`}
     >
       <div className="flex w-auto h-7 justify-between px-5">
         <span className="text-white text-xs h-fit w-fit my-auto">
@@ -28,7 +29,7 @@ const LandingHeader = () => {
         <div className="w-auto">
           {/* Initially hidden, only visible when scrolled */}
           {isScrolled && (
-            <>
+            <div className="inline-block animate-slide-in-right">
               <NavLink to="/" className="mx-2">
                 <span className="text-white text-xs my-auto cursor-pointer">Home</span>
               </NavLink>
@@ -38,7 +39,7 @@ const LandingHeader = () => {
               <NavLink to="/about" className="mx-2">
                 <span className="text-white text-xs my-auto cursor-pointer">About</span>
               </NavLink>
-            </>
+            </div>
           )}
           <NavLink to="/login" className="mx-2">
             <span className="text-white text-xs my-auto cursor-pointer">Login</span>
