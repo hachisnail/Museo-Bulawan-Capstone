@@ -124,20 +124,20 @@ const NewsAndEvents = () => {
 
       {/* Events Section */}
       <div className="w-auto mx-auto pt-10 min-h-screen bg-white">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-10">
           {events.map((event) => (
             <div
               key={event.id}
-              className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-4"
+              className="flex flex-col items-center text-center bg-white p-4"
             >
               <img
                 src={event.image}
                 alt={event.name}
-                className="w-80 h-60 object-cover rounded-lg"
+                className="w-full max-w-xs h-auto object-cover rounded-lg"
               />
-              <p className="text-red-500 mt-4">{event.category}</p>
-              <h3 className="text-xl font-semibold">{event.name}</h3>
-              <p className="text-gray-500">{event.date}</p>
+              <p className="text-red-500 mt-4 uppercase text-sm">{event.category}</p>
+              <h3 className="text-2xl font-bold mt-2">{event.name}</h3>
+              <p className="text-gray-500 mt-1">{event.date}</p>
             </div>
           ))}
         </div>
