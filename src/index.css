@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
+
 /* Hide scrollbar but keep scrolling */
 ::-webkit-scrollbar {
   display: none;
 }
+
 
 body {
   -ms-overflow-style: none;
@@ -25,4 +27,16 @@ body {
 
 .animate-slide-in-right {
   animation: slideInRight 0.8s ease forwards;
+}
+
+@-moz-document url-prefix() {
+  html {
+    font-size: 12.6px  !important;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  html {
+    font-size: 12px !important;
+  }
 }
