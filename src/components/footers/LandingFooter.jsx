@@ -8,33 +8,35 @@ const LandingFooter = () => {
 
   return (
     <>
-    <div className='w-screen h-70 bg-[#1C1B19] p-10'>
-      <div className='w-full h-full flex flex-col'>
-        <div className='w-full h-1/3 flex'>
-          <img src="./assets/LOGO.png" alt="Museo Bulawan Logo" />
-          <span className='w-auto h-auto font-bold text-4xl text-white my-auto ml-2'>MUSEO BULWAN</span>
-        </div>
-        <div className='w-full h-2/3 flex space-x-2'>
-          <div className='w-[40%] h-full'>
-            <div className='w-full h-[55%] flex'>
-              <span className='text-white text-2xl font-serif my-auto mx-3'>
-              Helping us raise awareness regarding Camnortenos identity is crucial, and your support can make a significant difference.
-              </span>
+    <div className='w-screen h-80 bg-[#1C1B19] p-10'>
+        <div className='w-full h-full flex flex-col'>
+            <div className='h-auto w-full flex flex-col gap-3'>
+              <div className='h-full w-full flex items-start justify-start gap-2 pl-4'>
+                <div className='w-auto h-9 flex gap-2 items-center'>
+                  <NavLink to="/">
+                  <span  className='text-white text-xl'>Home</span>
+                  </NavLink>
+                  <div className='h-full w-0.5 bg-white'></div>
+                </div>
+                <div className='w-auto h-9 flex gap-2 items-center'>
+                  <NavLink to="/news&events">
+                  <span className='text-white text-xl'>News & Events</span>
+                  </NavLink>
+                  <div className='h-full w-0.5 bg-white'></div>
+                </div>
+                <div className='w-auto h-9 flex gap-2 items-center'>
+                  <NavLink to="/about">
+                  <span  className='text-white text-xl'>About us</span>
+                  </NavLink>
+                </div>
+              </div>
+              <div className='w-full h-0.5 bg-white'></div>
             </div>
-            <div className='w-full h-[45%]'>
-              <span className='w-auto my-auto mx-2 text-white'>
-              We gratefully accept donations or just lending of your artifact will greatly help us.
-              </span>
+           
+            <div className='h-full'>
+              s
             </div>
-          </div>
-          <div className='w-[30%] h-full'>
-
-          </div>
-          <div lassName='w-[30%] h-full'>
-
-          </div>
         </div>
-      </div>
     </div>
     </>
   );
