@@ -8,6 +8,8 @@ const Donations = () => {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+
+
   // Attach tab + dropdown behavior in a single function
   useEffect(() => {
     function initDomInteractions() {
@@ -86,6 +88,62 @@ const Donations = () => {
     };
   }, []);
 
+  const [approveVisit, setApproveVisit] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState(null);
+
+
+  const handleRowClick = () => {
+    // Example modal data (you'll replace this with actual dynamic data)
+    setModalData({
+      fromFirstName: 'Juan',
+      fromLastName: 'Dela Cruz',
+      email: 'juandlacruz@gmail.com',
+      phone: '09786734766',
+      address: 'Ofelia Street, Barangay 2, Daet, Camarines Norte',
+      purpose: 'School Field Trip',
+      organization: 'Juan dela Cruz Elementary School',
+      dateSent: '02-19-2024',
+      artifactTitle: "My Great Grandfather's Bolo during World War 2",
+      artifactDescription:
+        'The Bolo is Still intact, there is a little rust near the handle on the scabbard is already missing.',
+      artifactAcquisition:
+        'It was given to me by my father and it is passed through generations so it is like a family helium.',
+      artifactInfo: 'The Blade is a little bit loose so you must be careful about it.',
+      artifactStory:
+        'The artifact is used by my grandfather on the WWII and during a unit practice. U.S. Army’s 1st Filipino Infantry Regiment.',
+      reasonForDonating:
+        'I think that I can’t preserve the artifact and I also think that it should be placed where everyone could see and admire it.',
+      artifactImages: ['image1.jpg', 'image2.jpg'], // Replace with actual paths
+      relatedArtifactImages: ['related-image.jpg'],
+      documentation: 'CertificateofAuthenticity.pdf',
+    });
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setModalData(null);
+  };
+
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+
+  // Function to open confirmation modal
+  const handleSend = () => {
+    setShowConfirmModal(true);
+  };
+
+  // Confirm sending response
+  const confirmSendYes = () => {
+    alert('Form sent successfully!');
+    setShowModal(false);
+    setShowConfirmModal(false);
+  };
+
+  // Cancel sending response
+  const confirmSendNo = () => {
+    setShowConfirmModal(false);
+  };
   // JSX layout remains the same; only the "script" replaced by our single function
   return (
     <>
@@ -240,7 +298,10 @@ const Donations = () => {
                   <div className='w-full h-[95%] overflow-y-auto max-h-[420px]'>
                     {/* Example row */}
                     <div className='flex flex-col gap-4 px-1 mt-3'>
-                      <div className='grid grid-cols-7 gap-3 bg-white w-full h-12 outline outline-black outline-1 rounded-md px-7 text-base'>
+                      <div
+                        className='grid grid-cols-7 gap-3 bg-white w-full h-12 outline outline-black outline-1 rounded-md px-7 text-base cursor-pointer'
+                        onClick={handleRowClick}
+                      >
                         <div className='flex justify-center items-center'>02-19-2024</div>
                         <div className='flex justify-center items-center'>Olivia Harper</div>
                         <div className='flex justify-center items-center col-span-2'>
@@ -385,6 +446,238 @@ const Donations = () => {
           </div>
           {/* END OF DONATION CONTENT */}
         </div>
+
+        {showModal && modalData && (
+          <div
+            className='fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm'
+            onClick={handleCloseModal}
+          >
+            <div
+              className='relative bg-gray-100 rounded-md shadow-lg p-6 w-[650px] h-[80vh] flex flex-col'
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* FIXED CLOSE BUTTON */}
+              <button
+                className='absolute top-3 right-3 text-gray-600 text-lg font-bold cursor-pointer z-50'
+                onClick={handleCloseModal}
+              >
+                X
+              </button>
+
+              {/* Scrollable content container */}
+              <div className='overflow-y-auto flex-1 pr-2'>
+                <div className='text-right text-sm text-blue-500'>{modalData.dateSent}</div>
+
+                <h2 className='text-3xl font-semibold mb-6'>Donation Form</h2>
+
+                {/* Information Section */}
+                <div className='border border-gray-300 rounded-md p-4 bg-white mb-6'>
+                  <h3 className='font-bold mb-4 text-lg'>Information</h3>
+
+                  <div className='flex mb-4'>
+                    <div className='font-semibold w-[50px]'>From:</div>
+                    <div className='flex flex-1 flex-wrap justify-evenly'>
+                      <div className='text-center'>
+                        <span className='text-blue-500'>{modalData.fromFirstName || 'N/A'}</span>
+                        <div className='text-xs text-gray-500'>First Name</div>
+                      </div>
+                      <div className='text-center'>
+                        <span className='text-blue-500'>{modalData.fromMiddleName || 'N/A'}</span>
+                        <div className='text-xs text-gray-500'>Middle Name</div>
+                      </div>
+                      <div className='text-center'>
+                        <span className='text-blue-500'>{modalData.fromLastName || 'N/A'}</span>
+                        <div className='text-xs text-gray-500'>Last Name</div>
+                      </div>
+                      <div className='text-center'>
+                        <span className='text-blue-500'>{modalData.suffix || 'N/A'}</span>
+                        <div className='text-xs text-gray-500'>Suffix</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p>
+                    <strong>Email:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.email}</span>
+                  </p>
+                  <p>
+                    <strong>Phone Number:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.phone}</span>
+                  </p>
+                  <p>
+                    <strong>Address:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.address}</span>
+                  </p>
+                  <p>
+                    <strong>Purpose of Visit:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.purpose}</span>
+                  </p>
+                  <p>
+                    <strong>Organization:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.organization}</span>
+                  </p>
+                </div>
+
+                {/* Artifact Section */}
+                <div className='border border-gray-300 rounded-md p-4 bg-white mb-6'>
+                  <h3 className='font-bold mb-4 text-lg'>About the Artifact</h3>
+
+                  <p>
+                    <strong>Title:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.artifactTitle}</span>
+                  </p>
+                  <p>
+                    <strong>Description:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.artifactDescription}</span>
+                  </p>
+                  <p>
+                    <strong>Acquisition:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.artifactAcquisition}</span>
+                  </p>
+                  <p>
+                    <strong>Information:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.artifactInfo}</span>
+                  </p>
+                  <p>
+                    <strong>Story:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.artifactStory}</span>
+                  </p>
+                  <p>
+                    <strong>Reason for Donating:</strong>{' '}
+                    <span className='text-blue-500'>{modalData.reasonForDonating}</span>
+                  </p>
+
+                  <div className='mt-4'>
+                    <strong>Artifact Images:</strong>
+                    <div className='flex flex-wrap gap-2 mt-2'>
+                      {modalData.artifactImages.map((img, idx) => (
+                        <img
+                          key={idx}
+                          src={img}
+                          alt='artifact'
+                          className='w-32 h-32 object-cover rounded-md'
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className='mt-4'>
+                    <strong>Documentation:</strong>
+                    <a href={modalData.documentation} className='text-red-500 underline ml-2'>
+                      {modalData.documentation}
+                    </a>
+                  </div>
+
+                  <div className='mt-4'>
+                    <strong>Related Images:</strong>
+                    <div className='flex flex-wrap gap-2 mt-2'>
+                      {modalData.relatedArtifactImages.map((img, idx) => (
+                        <img
+                          key={idx}
+                          src={img}
+                          alt='related artifact'
+                          className='w-32 h-32 object-cover rounded-md'
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <hr className='my-4' />
+
+                {/* Respond Section */}
+                <h3 className='text-lg font-bold mb-2'>Respond</h3>
+                <div className='mb-4'>
+                  <span className='font-semibold mr-2'>Approve Visit?</span>
+                  <label
+                    className={`border px-4 py-1 mr-2 rounded inline-flex items-center cursor-pointer ${approveVisit === 'yes' ? 'bg-green-100 border-green-400' : 'hover:bg-gray-200'
+                      }`}
+                  >
+                    <input
+                      type='radio'
+                      name='approveVisit'
+                      value='yes'
+                      className='hidden'
+                      checked={approveVisit === 'yes'}
+                      onChange={() => setApproveVisit('yes')}
+                    />
+                    <span>Yes</span>
+                  </label>
+                  <label
+                    className={`border px-4 py-1 rounded inline-flex items-center cursor-pointer ${approveVisit === 'no' ? 'bg-red-100 border-red-400' : 'hover:bg-gray-200'
+                      }`}
+                  >
+                    <input
+                      type='radio'
+                      name='approveVisit'
+                      value='no'
+                      className='hidden'
+                      checked={approveVisit === 'no'}
+                      onChange={() => setApproveVisit('no')}
+                    />
+                    <span>No</span>
+                  </label>
+                </div>
+
+                <label className='block mb-2 font-semibold'>Leave a message</label>
+                <textarea
+                  className='w-full h-24 p-2 border border-gray-400 rounded'
+                  defaultValue='The only available date is December 12, 2024'
+                />
+                <p className='text-sm text-gray-500 mt-1'>
+                  This will automatically send to {modalData.email}
+                </p>
+
+                <div className='text-right mt-4'>
+                  <button
+                    className='bg-[#9C7744] text-white px-5 py-2 rounded hover:opacity-90'
+                    onClick={handleSend}
+                  >
+                    Send
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {showConfirmModal && (
+          <div
+            className='fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm'
+            onClick={confirmSendNo}
+          >
+            <div
+              className='relative bg-gray-100 rounded-md shadow-lg p-6 w-[400px]'
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className='absolute top-3 right-3 text-gray-600 text-lg font-bold cursor-pointer'
+                onClick={confirmSendNo}
+              >
+                X
+              </button>
+              <div className='text-center'>
+                <h2 className='text-lg font-bold mb-4'>Confirm Action</h2>
+                <p className='mb-6'>
+                  Are you sure you want to send this response?
+                </p>
+                <div className='flex justify-center gap-4'>
+                  <button
+                    className='bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600'
+                    onClick={confirmSendYes}
+                  >
+                    Yes
+                  </button>
+                  <button
+                    className='bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600'
+                    onClick={confirmSendNo}
+                  >
+                    No
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
