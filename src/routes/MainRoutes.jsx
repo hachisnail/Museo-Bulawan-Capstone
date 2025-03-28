@@ -7,6 +7,8 @@ import About from '../pages/public/about';
 import Login from '../pages/public/login';
 import NewsAndEvents from '../pages/public/newsandevents';
 import AdminRoutes from './adminRoutes';
+import Form from '../pages/public/form';
+import Support from '../pages/public/support';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
       { path: 'about', element: <About /> },
       { path: 'news&events', element: <NewsAndEvents /> },
       { path: 'login', element: <Login /> },
+      { path: 'form', element: <Form /> },
+      { path: 'support', element: <Support /> },
     ],
   },
   {

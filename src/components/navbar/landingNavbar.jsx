@@ -5,7 +5,7 @@ import { useAuth } from '../../context/AuthContext';
 const landingNavbar = () => {
   const { isAuthenticated } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isSpecialRoute = location.pathname === '/news&events' || location.pathname === '/about';
+  const isSpecialRoute = location.pathname === '/news&events' || location.pathname === '/about' || location.pathname === '/form' || location.pathname === '/support';
 
   return (
     <>
